@@ -1,0 +1,124 @@
+
+ 
+\documentclass{article}
+
+\usepackage[inner=2.5cm,outer=1.5cm,bottom=2cm]{geometry} % layout
+\usepackage{setspace}
+\doublespacing 
+\usepackage{graphicx}  %import images
+\usepackage{float} %control float positions
+\usepackage{apacite} % apa style citation
+\usepackage{bm} % math stuff
+\usepackage{enumitem} % itemize setting
+%\usepackage{indentfirst} % indentation
+%\usepackage{xfrac}  % slanted fraction
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+%___________footer and header _______________
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyfoot[R]{\thepage}
+%\renewcommand{\headrulewidth}{1pt}
+
+\begin{document}
+	
+\section{Nonlinear Mixed Effects Model}
+
+\subsection{The model}
+\cite{lindstrom1990nonlinear} propsed a nonlinear mixed effects model which is a combination of the nonlinear fixed effects model and the linear mixed effects model. In this model, the assumption of normal errors holds and the expection function is nonlinear.
+
+The nonlinear mixed effect model for the $i_{th}$ individual at the $j_{th}$ observation time can be defined as
+
+\begin{equation}
+y_{ij} = f(\bm{\phi_i},\bm{x_{ij}})+e_{ij},
+\end{equation}
+
+where $Y_{ij}$ is the$i_{th}$ individual's response at time $j$, $f$ is a nonlinear function of the parameter vector $\bm{\phi_i}$ and the predictor vector $\bm{x_{ij}}$ and $e_{ij}$ is the error term which is normally distributed. The model allows individuals to have different parameter vectors by writing $\bm{\phi_i}$ as
+
+\begin{equation}
+\bm{\phi_i} = \bm{A_i}\bm{\beta}+\bm{B_i}\bm{b_i}
+\end{equation}
+
+where $\bm{\beta}$ is the vector of fixed effects, $\bm{b_i} \sim N(\bm{0}, \sigma^2 \bm{D})$ is the vector of random effects, $\bm{A_i}$ and $\bm{B_i}$ are design matrices for the fixed and random effects, respectively. The inclusion of matrices  $\bm{A_i}$ and $\bm{B_i}$ gives a flexible model specification. For example, if $\bm{A_i} = [\bm{\text{I}},0]$ for subjects in group 1 and $\bm{A_i} = [0,\bm{\text{I}}]$ for subjects in group 2 then the two groups will have different fixed effects. Similarly, the columns in $\bm{B_i}$ can control the components of random effects.
+
+The model for the $i_{th}$ subject's can be written as 
+
+\begin{equation}
+\bm{y_i} = \bm{\eta_i(\bm{\phi_i})} + \bm{e_i}
+\end{equation}
+where $\bm{y_i}= [y_{i1},y_{i2},...,y_{in_i}]^T$, $\bm{e_i}=[e_{i1},e_{i2},...,e_{in_i}]^T$, $\bm{e_i} \sim N(\bm{0}, \sigma^2 \bm{\Lambda_i})$ and $\bm{\eta_i(\phi_i)}= [f(\bm{\phi_i},\bm{x}_{i1}), f(\bm{\phi_i},\bm{x}_{i2}),...,f(\bm{\phi_i},\bm{x}_{in_i})]^T$. $\bm{\Lambda_i}$ depends on $i$ only through its dimension. In many cases $\bm{\Lambda_i} = \bm{\text{I}}$ but nonindependent covariance matrices are also allowed. 
+
+We can incorporate models for $N$ subjects into one model by letting
+$\bm{y}=[\bm{y_1},\bm{y_2},...,\bm{y_N}]^T$, $\bm{\phi} = [\bm{\phi_1},\bm{\phi_2},...,\bm{\phi_N}]^T$, and $\bm{\eta(\phi)}=[\bm{\eta_1(\phi_1)},\bm{\eta_2(\phi_2)},...,\bm{\eta_N(\phi_N)}]$. Then the overall model can be written as 
+
+
+\begin{equation}
+\begin{split}
+\bm{y|b} &\sim N(\bm{\eta(\bm{\phi})},\sigma^2 \bm{\Lambda}), \\
+\bm{\phi} &= \bm{A}\bm{\beta}+\bm{B}\bm{b}, \\
+\bm{b} &\sim N(\bm{0},\sigma^2 \widetilde{D})
+\end{split}
+\end{equation}
+where $\bm{\widetilde{D}} = diag(\bm{D},\bm{D},...,\bm{D})$, $\bm{\Lambda} = diag(\bm{\Lambda_1},\bm{\Lambda_2},...,\bm{\Lambda_N})$, $\bm{B} = diag(\bm{B_1},\bm{B_2},...,\bm{B_N})$, $A= [\bm{A_1},\bm{A_2},...,\bm{A_N}]^T$ and $\bm{b} = [\bm{b_1},\bm{b_2},...,\bm{b_N}]^T$.
+
+
+\subsection{Estimation}
+The estimates \cite{lindstrom1990nonlinear} proposed are maximum likelihood estimates for fixed effects and posterior modes for random effects.
+
+Let $\bm{\theta}$ contain the parameters in $\bm{D}$ and $\bm{\Lambda}$. The estimator $\bm{\hat{\beta}(\theta)}$ and $\bm{\hat{b}(\theta)}$ maximize the following function:
+\begin{equation}
+g(\bm{\beta},\bm{b}|\bm{y}) = -1/2 \sigma^{-2}(\bm{y-\eta(A\beta+Bb))^T\Lambda^{-1}(y-\eta(A\beta+Bb))} -1/2\sigma^{-2}\bm{b^T \widetilde{D}^{-1}b}.
+\end{equation}
+If $\bm{\beta}$ is fixed then the $\bm{b}$ that maximizes $g$ is the posterior mode since $g$ is a posterior density of $\bm{b}$ plus a constant for a given $\bm{\beta}$. The estimates can be obtained by first creating a 'pseudo-data'
+
+\begin{equation}
+\bm{\widetilde{y}} = \bm{\widetilde{\eta}}(\bm{A}\bm{\beta}+\bm{B}\bm{b}) +\bm{\widetilde{e}},
+\end{equation}
+where 
+$\bm{\widetilde{y}} = 
+\begin{bmatrix}
+\bm{\eta}^{-1/2} \bm{y}\\ \bm{0}
+\end{bmatrix}$, 
+$ \bm{\widetilde{e}} \sim N(0, \sigma^2 \bm{\text{I}})$ and $\bm{\widetilde{\eta}}(\bm{A}\bm{\beta}+\bm{B}\bm{b}) = 
+\begin{bmatrix}
+\bm{\Lambda}^{1/2}\bm{\eta(A\beta+Bb)} \\
+\bm{\widetilde{D}}^{-1/2}\bm{b}
+\end{bmatrix}.$
+ The estimates can then be calculated using the least squares approach.
+ 
+The maximum likelihood estimators for $\theta$ based on the marginal density of $\bm{y}$ is very difficult to obtain since $\bm{\eta}$ is nonlinear in $\bm{b}$. \cite{lindstrom1990nonlinear} instead approximated the marginal distribution of $\bm{y}$ by
+\begin{equation}
+\bm{y} \dot\sim N(\bm{\eta(A\beta} + \bm{B\hat{b})} - \bm{ \hat{Z}\hat{b}},\sigma^2\bm{\hat{V}}),
+\end{equation}
+where $\hat{\bm{V}} = \bm{\Lambda} + \bm{\hat{Z}\widetilde{D}\hat{Z}^T}$, and $\hat{\bm{Z}} = \frac{\partial \bm{\eta} }{\partial \bm{b}^T}|_{\hat{\bm{\beta}},\hat{\bm{b}}}$. The log-liklihood to the approximate marginal distribution can then be obtained as
+\begin{equation}
+l(\bm{\beta},\sigma,\bm{\theta}|\bm{y}) = -\frac{1}{2} \text{log}|\sigma^2\hat{\bm{V}}|-\frac{1}{2\sigma^{2}}[\bm{y} - \bm{\eta(A\beta+B\hat{b})+ \hat{Z}\hat{b}]}^T \hat{\bm{V}}^{-1}[\bm{y} - \bm{\eta(A\beta+B\hat{b})+ \hat{Z}\hat{b}]}.
+\end{equation}
+The estiamtors \cite{lindstrom1990nonlinear} proposed reduce to standard linear mixed effects model estimators when $f$ is linear and reduce to nonlinear least squares estimators if there is no random effects.
+
+
+
+
+\subsection{Software}
+The R package nlme \cite{pinheiro2017package} can be used to fit user-specified nonlinear mixed effects model. This package uses \cite{lindstrom1990nonlinear} method. It implemented a two-step iterative algorithm \cite{stegmann2018nonlinear}:
+\begin{itemize}
+	\item Penalized nonlinear least squares step. The estimates for covariance matrix are fixed. The fixed effects and random effects estimates are updated.
+	
+	\item Linear mixed effect step. The estimates for covariance matrix are obtained by minimizing the log-likelihood of approximated distribution of $\bm{y}$ using the current estimates for fixed and random effects.
+\end{itemize}
+Newton–Raphson algorithm converges more quickly than EM algorithm but the former is more sensitive to poor starting values \cite{stegmann2018nonlinear}. The nlme function utilizes the EM algorithm in the initial iteration in the linear mixed effect step and switches to Newton–Raphson algorithm afterwards. 
+
+
+
+
+
+
+
+
+\bibliographystyle{apacite} 
+\bibliography{reference}	
+
+\end{document}

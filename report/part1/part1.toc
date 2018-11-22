@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Notation}{3}
+\contentsline {section}{\numberline {2}Introduction}{3}
+\contentsline {section}{\numberline {3}Longitudinal submodel}{3}
+\contentsline {subsection}{\numberline {3.1}Linear mixed model}{3}
+\contentsline {subsection}{\numberline {3.2}Shape invariant model with random effects}{5}
+\contentsline {section}{\numberline {4}Survival submodel}{6}
+\contentsline {subsection}{\numberline {4.1}Cox proportional hazards model}{8}
+\contentsline {subsection}{\numberline {4.2}Extension: time-dependent covariates}{10}
+\contentsline {subsection}{\numberline {4.3}aft?}{10}
+\contentsline {section}{\numberline {5}Classical approaches to joint modeling}{10}
+\contentsline {subsection}{\numberline {5.1}A survival model with time-dependent covariates}{11}
+\contentsline {subsection}{\numberline {5.2}A two-stage model}{11}
+\contentsline {subsection}{\numberline {5.3}Shared random effects approach}{12}
+\contentsline {section}{\numberline {6}Association Structures}{12}
+\contentsline {subsection}{\numberline {6.1}Time-dependent associations}{12}
+\contentsline {subsection}{\numberline {6.2}Time-independent associations}{12}
+\contentsline {section}{\numberline {7}Estimation?}{13}
+\contentsline {section}{\numberline {8}Application examples}{13}
+\contentsline {section}{References}{13}

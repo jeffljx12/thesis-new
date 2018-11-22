@@ -1,0 +1,10 @@
+http://people.stat.sfu.ca/~cschwarz/Consulting/Trinity/Phase2/TrinityWorkshop/Workshop-material-Simon/Intro_to_splines/intro_to_splines_notes.pdf
+
+http://people.stat.sfu.ca/~cschwarz/Consulting/Trinity/Phase2/TrinityWorkshop/Workshop-handouts/TW-04-Intro-splines.pdf
+
+https://web.as.uky.edu/statistics/users/pbreheny/764-F11/notes/9-27.pdf
+
+https://www.r-bloggers.com/can-we-use-b-splines-to-generate-non-linear-data/
+
+
+https://cran.r-project.org/web/packages/crs/vignettes/spline_primer.pdf

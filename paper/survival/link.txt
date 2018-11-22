@@ -1,0 +1,2 @@
+http://data.princeton.edu/wws509/notes/c7s1.html
+http://www.sthda.com/english/wiki/cox-proportional-hazards-model

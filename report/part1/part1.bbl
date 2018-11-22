@@ -1,0 +1,505 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Beath%
+}{%
+Beath%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+beath2007infant}
+\APACinsertmetastar {%
+beath2007infant}%
+\begin{APACrefauthors}%
+Beath, K\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Infant growth modelling using a shape invariant model
+  with random effects} {Infant growth modelling using a shape invariant model
+  with random effects}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics in medicine}{26}{12}{2547--2564}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bycott%
+\ \BBA {} Taylor%
+}{%
+Bycott%
+\ \BBA {} Taylor%
+}{%
+{\protect \APACyear {1998}}%
+}]{%
+bycott1998comparison}
+\APACinsertmetastar {%
+bycott1998comparison}%
+\begin{APACrefauthors}%
+Bycott, P.%
+\BCBT {}\ \BBA {} Taylor, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1998}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A comparison of smoothing techniques for CD4 data
+  measured with error in a time-dependent Cox proportional hazards model} {A
+  comparison of smoothing techniques for cd4 data measured with error in a
+  time-dependent cox proportional hazards model}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics in medicine}{17}{18}{2061--2077}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+COX%
+}{%
+COX%
+}{%
+{\protect \APACyear {1972}}%
+}]{%
+cox1972regression}
+\APACinsertmetastar {%
+cox1972regression}%
+\begin{APACrefauthors}%
+COX, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1972}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Regression Models and Life-Tables} {Regression models
+  and life-tables}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society. Series B
+  (Methodological)}{34}{2}{87--22}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cox%
+}{%
+Cox%
+}{%
+{\protect \APACyear {1975}}%
+}]{%
+cox1975partial}
+\APACinsertmetastar {%
+cox1975partial}%
+\begin{APACrefauthors}%
+Cox, D\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1975}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Partial likelihood} {Partial likelihood}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrika}{62}{2}{269--276}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dafni%
+\ \BBA {} Tsiatis%
+}{%
+Dafni%
+\ \BBA {} Tsiatis%
+}{%
+{\protect \APACyear {1998}}%
+}]{%
+dafni1998evaluating}
+\APACinsertmetastar {%
+dafni1998evaluating}%
+\begin{APACrefauthors}%
+Dafni, U\BPBI G.%
+\BCBT {}\ \BBA {} Tsiatis, A\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1998}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evaluating surrogate markers of clinical outcome when
+  measured with error} {Evaluating surrogate markers of clinical outcome when
+  measured with error}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrics}{}{}{1445--1462}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dempster%
+, Laird%
+\BCBL {}\ \BBA {} Rubin%
+}{%
+Dempster%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1977}}%
+}]{%
+dempster1977maximum}
+\APACinsertmetastar {%
+dempster1977maximum}%
+\begin{APACrefauthors}%
+Dempster, A\BPBI P.%
+, Laird, N\BPBI M.%
+\BCBL {}\ \BBA {} Rubin, D\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1977}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Maximum likelihood from incomplete data via the EM
+  algorithm} {Maximum likelihood from incomplete data via the em
+  algorithm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the royal statistical society. Series B
+  (methodological)}{}{}{1--38}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Efron%
+}{%
+Efron%
+}{%
+{\protect \APACyear {1977}}%
+}]{%
+efron1977efficiency}
+\APACinsertmetastar {%
+efron1977efficiency}%
+\begin{APACrefauthors}%
+Efron, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1977}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The efficiency of Cox's likelihood function for censored
+  data} {The efficiency of cox's likelihood function for censored data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the American statistical
+  Association}{72}{359}{557--565}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Faucett%
+\ \BBA {} Thomas%
+}{%
+Faucett%
+\ \BBA {} Thomas%
+}{%
+{\protect \APACyear {1996}}%
+}]{%
+faucett1996simultaneously}
+\APACinsertmetastar {%
+faucett1996simultaneously}%
+\begin{APACrefauthors}%
+Faucett, C\BPBI L.%
+\BCBT {}\ \BBA {} Thomas, D\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1996}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simultaneously modelling censored survival data and
+  repeatedly measured covariates: a Gibbs sampling approach} {Simultaneously
+  modelling censored survival data and repeatedly measured covariates: a gibbs
+  sampling approach}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics in medicine}{15}{15}{1663--1685}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gail%
+}{%
+Gail%
+}{%
+{\protect \APACyear {1981}}%
+}]{%
+gail1981evaluating}
+\APACinsertmetastar {%
+gail1981evaluating}%
+\begin{APACrefauthors}%
+Gail, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1981}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evaluating serial cancer marker studies in patients at
+  risk of recurrent disease} {Evaluating serial cancer marker studies in
+  patients at risk of recurrent disease}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrics}{}{}{67--78}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+George%
+, Seals%
+\BCBL {}\ \BBA {} Aban%
+}{%
+George%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+george2014survival}
+\APACinsertmetastar {%
+george2014survival}%
+\begin{APACrefauthors}%
+George, B.%
+, Seals, S.%
+\BCBL {}\ \BBA {} Aban, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Survival analysis and regression models} {Survival
+  analysis and regression models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Nuclear Cardiology}{21}{4}{686--694}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Grambsch%
+\ \BBA {} Therneau%
+}{%
+Grambsch%
+\ \BBA {} Therneau%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+grambsch1994proportional}
+\APACinsertmetastar {%
+grambsch1994proportional}%
+\begin{APACrefauthors}%
+Grambsch, P\BPBI M.%
+\BCBT {}\ \BBA {} Therneau, T\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Proportional hazards tests and diagnostics based on
+  weighted residuals} {Proportional hazards tests and diagnostics based on
+  weighted residuals}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrika}{81}{3}{515--526}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harville%
+}{%
+Harville%
+}{%
+{\protect \APACyear {1977}}%
+}]{%
+harville1977maximum}
+\APACinsertmetastar {%
+harville1977maximum}%
+\begin{APACrefauthors}%
+Harville, D\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1977}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Maximum likelihood approaches to variance component
+  estimation and to related problems} {Maximum likelihood approaches to
+  variance component estimation and to related problems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the American Statistical
+  Association}{72}{358}{320--338}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Laird%
+\ \BBA {} Ware%
+}{%
+Laird%
+\ \BBA {} Ware%
+}{%
+{\protect \APACyear {1982}}%
+}]{%
+laird1982random}
+\APACinsertmetastar {%
+laird1982random}%
+\begin{APACrefauthors}%
+Laird, N\BPBI M.%
+\BCBT {}\ \BBA {} Ware, J\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Random-effects models for longitudinal data}
+  {Random-effects models for longitudinal data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrics}{}{}{963--974}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lawton%
+, Sylvestre%
+\BCBL {}\ \BBA {} Maggio%
+}{%
+Lawton%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1972}}%
+}]{%
+lawton1972self}
+\APACinsertmetastar {%
+lawton1972self}%
+\begin{APACrefauthors}%
+Lawton, W.%
+, Sylvestre, E.%
+\BCBL {}\ \BBA {} Maggio, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1972}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self modeling nonlinear regression} {Self modeling
+  nonlinear regression}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Technometrics}{14}{3}{513--532}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Prentice%
+}{%
+Prentice%
+}{%
+{\protect \APACyear {1982}}%
+}]{%
+prentice1982covariate}
+\APACinsertmetastar {%
+prentice1982covariate}%
+\begin{APACrefauthors}%
+Prentice, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Covariate measurement errors and parameter estimation in
+  a failure time regression model} {Covariate measurement errors and parameter
+  estimation in a failure time regression model}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrika}{69}{2}{331--342}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sweeting%
+\ \BBA {} Thompson%
+}{%
+Sweeting%
+\ \BBA {} Thompson%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+sweeting2011joint}
+\APACinsertmetastar {%
+sweeting2011joint}%
+\begin{APACrefauthors}%
+Sweeting, M\BPBI J.%
+\BCBT {}\ \BBA {} Thompson, S\BPBI G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Joint modelling of longitudinal and time-to-event data
+  with application to predicting abdominal aortic aneurysm growth and rupture}
+  {Joint modelling of longitudinal and time-to-event data with application to
+  predicting abdominal aortic aneurysm growth and rupture}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrical Journal}{53}{5}{750--763}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+A.~Tsiatis%
+, Degruttola%
+\BCBL {}\ \BBA {} Wulfsohn%
+}{%
+A.~Tsiatis%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1995}}%
+}]{%
+tsiatis1995modeling}
+\APACinsertmetastar {%
+tsiatis1995modeling}%
+\begin{APACrefauthors}%
+Tsiatis, A.%
+, Degruttola, V.%
+\BCBL {}\ \BBA {} Wulfsohn, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Modeling the relationship of survival to longitudinal
+  data measured with error. Applications to survival and CD4 counts in patients
+  with AIDS} {Modeling the relationship of survival to longitudinal data
+  measured with error. applications to survival and cd4 counts in patients with
+  aids}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the American Statistical
+  Association}{90}{429}{27--37}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+A\BPBI A.~Tsiatis%
+\ \BBA {} Davidian%
+}{%
+A\BPBI A.~Tsiatis%
+\ \BBA {} Davidian%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+tsiatis2004joint}
+\APACinsertmetastar {%
+tsiatis2004joint}%
+\begin{APACrefauthors}%
+Tsiatis, A\BPBI A.%
+\BCBT {}\ \BBA {} Davidian, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Joint modeling of longitudinal and time-to-event data:
+  an overview} {Joint modeling of longitudinal and time-to-event data: an
+  overview}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistica Sinica}{}{}{809--834}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yu%
+, Law%
+, Taylor%
+\BCBL {}\ \BBA {} Sandler%
+}{%
+Yu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2004}}%
+}]{%
+yu2004joint}
+\APACinsertmetastar {%
+yu2004joint}%
+\begin{APACrefauthors}%
+Yu, M.%
+, Law, N\BPBI J.%
+, Taylor, J\BPBI M.%
+\BCBL {}\ \BBA {} Sandler, H\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Joint longitudinal-survival-cure models and their
+  application to prostate cancer} {Joint longitudinal-survival-cure models and
+  their application to prostate cancer}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistica Sinica}{}{}{835--862}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

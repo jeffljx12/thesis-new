@@ -1,0 +1,88 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Lindstrom%
+\ \BBA {} Bates%
+}{%
+Lindstrom%
+\ \BBA {} Bates%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+lindstrom1990nonlinear}
+\APACinsertmetastar {%
+lindstrom1990nonlinear}%
+\begin{APACrefauthors}%
+Lindstrom, M\BPBI J.%
+\BCBT {}\ \BBA {} Bates, D\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Nonlinear mixed effects models for repeated measures
+  data} {Nonlinear mixed effects models for repeated measures data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrics}{}{}{673--687}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pinheiro%
+\ \protect \BOthers {.}}{%
+Pinheiro%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+pinheiro2017package}
+\APACinsertmetastar {%
+pinheiro2017package}%
+\begin{APACrefauthors}%
+Pinheiro, J.%
+, Bates, D.%
+, DebRoy, S.%
+, Sarkar, D.%
+, Heisterkamp, S.%
+, Van~Willigen, B.%
+\BCBL {}\ \BBA {} Maintainer, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Package ‘nlme’} {Package ‘nlme’}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Linear and Nonlinear Mixed Effects Models,
+  version}{}{}{3--1}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stegmann%
+, Jacobucci%
+, Harring%
+\BCBL {}\ \BBA {} Grimm%
+}{%
+Stegmann%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+stegmann2018nonlinear}
+\APACinsertmetastar {%
+stegmann2018nonlinear}%
+\begin{APACrefauthors}%
+Stegmann, G.%
+, Jacobucci, R.%
+, Harring, J\BPBI R.%
+\BCBL {}\ \BBA {} Grimm, K\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Nonlinear Mixed-Effects Modeling Programs in R}
+  {Nonlinear mixed-effects modeling programs in r}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Structural Equation Modeling: A Multidisciplinary
+  Journal}{25}{1}{160--165}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

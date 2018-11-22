@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage[inner=2.5cm,outer=1.5cm,bottom=2cm]{geometry} % layout
+\usepackage{setspace}
+\doublespacing 
+\usepackage{graphicx}  %import images
+\usepackage{float} %control float positions
+\usepackage{apacite} % apa style citation
+\usepackage{bm} % math stuff
+\usepackage{enumitem} % itemize setting
+%\usepackage{indentfirst} % indentation
+%\usepackage{xfrac}  % slanted fraction
+\usepackage{amsmath}
+
+
+
+\begin{document}
+\section{Spline}
+	
+\subsection{Extended linear model}
+Regression analysis often estimates the conditional expectation of the dependent variable $Y$ given the independent variables $X$: $E(Y|X) = f(X)$. The form of the function $f$ must be specified in order to carry out regression analysis. One convenient and most common way to represent $f(X)$ is to use a linear model which assumes a linear relationship between a dependent variable and one or more independent variables: $Y_i= \beta_0+\beta_iX_i+\epsilon_i$. However, the assumption of linearity sometimes may not be adequate for describing the relationship. One way to extend this model is to replace the vector of the independent variable $X$ with transformations of $X$, and then use linear models in this new space of transformed $X$ \cite{friedman2001elements}. Let $h_m(X)$ denote the $m_{th}$ transformation of $X$, $m=1,...,M$. The extended linear model is formulated as
+
+\begin{equation}
+f(X) = \beta_0+ \sum_{m=1}^{M} \beta_mh_m(X),
+\end{equation}
+where $\{h_m\}$ are called basis functions. If $h_m(x) = x, m=1,...,M$, then it recovers the original linear model. If $h_m(x)$ include powers of $x$, then the model becomes a polynomial regression model, which is $Y_i=\beta_0+\beta_1X_i+\beta_2X_i^2+...+\beta_pX_i^p + \epsilon_i$.
+
+\subsection{Truncated polynomials}
+Polynomial terms of high degree are hard to interpret and are highly unstable. The polynomial model suffers from its global nature that each observation affects the entire curve. A slight change in coefficients to achieve a functional form in one region may cause the function to change dramatically in remote regions \cite{friedman2001elements}. 
+An alternative to use high order polynomial terms to account for curvature is to divide the domain of $X$ into smaller intervals and fit simpler polynomial models to each pieces. The points where the division occurs are called knots. A spline can be constructed by joining polynomials. The term spline comes from a flexible tools used by shipbuilders and draftsmen to draw smooth curves \cite{wegman1983splines}. In general, we impose some constraints to a spline of degree $D$. The constraints include that the function is continuous, the function has $D-1$ continuous derivatives, and the $D_{th}$ derivative is constant between knots \cite{friedman2001elements}. Mathematically, a spline of degree $D$ with $K$ knots can be expressed as
+\begin{equation}
+f(X)=\beta_0+\beta_1X+...+\beta_DX^D+\sum_{k=1}^{K}b_k(x-\xi_k)_+^D,
+\end{equation}
+where 
+\begin{equation}
+(X-\xi)_+^D=
+\begin{cases}
+X& X<\xi\\
+(X-\xi)^D& X \ge \xi
+\end{cases}
+\end{equation}
+is called a truncated polynomial function. Its value only affects the spline to the right of the knot $\xi$. These splines are also known as regression splines. The value of parameters $b_1,...,b_k,\beta_0,...,\beta_D$ can be estimated using least squares criterion. 
+
+\subsection{Natural cubic spline}
+The polynomials fit to data can be erratic near the boundary knots. \cite{friedman2001elements} summarized this through pointwise variance of spline fit by least squares and showed a clear explosion of variance near the boundaries in cubic splines. One solution is to add additional constraints that the function is linear beyond the boundary knots. Such splines are called natural splines. Assuming linearity near boundaries may introduce extra bias, but this approach is often considered to be reasonable since we have less information anyway \cite{friedman2001elements}. A natural cubic spline frees up 2 degrees of freedom in both boundary points. We can represent a natural cubic spline with $K$ knots using $K$ basis functions. The basis functions are
+\begin{equation}
+h_1(X)=1,\quad h_2(X)=X,\quad h_{k+2}(X)=-d_{(K-1)}(X),
+\end{equation}
+where 
+\begin{equation}
+d_k(X) = \frac{(X-\xi_k)^3_+ - (X-\xi_K)^3_+ }{\xi_K - \xi_k}.
+\end{equation}
+
+\subsection{B-spline} 
+While splines constructed from the truncated polynomials are conceptually simple, they have some numerical flaws. If the knots are close then the polynomials terms will be similar for all observations and thus cause nearly singular matrix problems. Also, values of polynomial terms may be very large, which makes the approach unstable. One more attractive approach is to use B-spline basis. The term "B-spline" is short for basis spline \cite{de1978practical}.  B-splines are defined by their order and number of interior knots. B-splines can be defined via recursion formula \cite{de1986b}. Consider a B-spline of order $M$ with $K$ interior knots. Let $\xi_0$ and $\xi_{K+1}$ be two boundary knots. We first define an augmented knot sequence \cite{friedman2001elements} $\tau$ so that 
+\begin{itemize}
+	\item $\tau_1 \le  \tau_2 \le ...\le\tau_M \le \xi_0$
+	\item $\tau_{j+M} = \xi_j, \quad j=1,...,K$
+	\item $\xi_{K+1} \le \tau_{K+M+1} \le \tau_{K+M+2} \le ... \le\tau_{K+2M}.$
+\end{itemize}
+For each of the augmented knots $\tau_i$, $i=1,...,K+2M$, a set of B-spline basis function of order $m$ ($m \le M $) $B_{i,m}$ can be defined recursively as follows: \cite{friedman2001elements}
+\begin{equation}
+B_{i,1}(x) = 
+\begin{cases}
+1& \tau_i \le x < \tau_{i+1}\\
+0& \text{otherwise}
+\end{cases}
+\end{equation}
+for $i=1,...,K+2M-1$.
+
+\begin{equation}
+B_{i,m}(x) = \frac{x-\tau_i}{\tau_{m+i-1}-\tau_i}B_{i,m-1}(x) + \frac{\tau_{i+m}-x}{\tau_{i+m}-\tau_{i+1}}B_{i+1,m-1}(x)
+\end{equation}
+for $i=1,...,k+2M-m$.
+The B-spline basis are not colinear and the values are always between $0$ and $1$ so this approach is more stable than splines constructed from the truncated polynomials. B-spline is also more computationally efficient even when the number of knots $K$ is large \cite{friedman2001elements}.
+
+
+
+\subsection{Choose knots (cross validation)?}
+
+\bibliographystyle{apacite} 
+\bibliography{reference}
+
+\end{document}

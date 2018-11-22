@@ -1,0 +1,289 @@
+
+ 
+\documentclass{article}
+
+\usepackage[inner=2.5cm,outer=1.5cm,bottom=2cm]{geometry} % layout
+\usepackage{setspace}
+\doublespacing 
+\usepackage{graphicx}  %import images
+\usepackage{float} %control float positions
+\usepackage{apacite} % apa style citation
+\usepackage{bm} % math stuff
+\usepackage{enumitem} % itemize setting
+%\usepackage{indentfirst} % indentation
+%\usepackage{xfrac}  % slanted fraction
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+%___________footer and header _______________
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyfoot[R]{\thepage}
+%\renewcommand{\headrulewidth}{1pt}
+
+\title{Literature review}
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Notation}
+Same notation across thesis? Or can be different in literature review nad method section
+
+\section{Introduction}\label{section1}
+There are many studies collect information about a survival outcome, together with longitudinal measurements of a disease marker. Longitudinal data are data in which a response variable is measured at different time points. For example, HIV patients may be followed over time and CD4 counts are coolected monthly.  Survival data describe the length of time from a time origin to an endpoint of interest. For example, individuals might be followed from the diagnosis of lung cancer to death. The endpoint in survival data does not have to be death. It could also be particular events such as onset of a disease, discharge from hospital after surgery, etc. There are many studies collect information about a survival outcome, together with longitudinal measurements of a disease marker. The goal of these study might quite variable. The study may be accessing how the longitudinal measurement changes with time and how it is affect by other covariates;  it may be designed to improve efficiency and reduce bias in the survival component; it may be characterizing the relationship between the survival and longitudinal processes.
+
+\section{Longitudinal submodel}
+\subsection{Linear mixed model}
+The idea of linear mixed model was started by \cite{harville1977maximum} and \cite{laird1982random} introduced a unified approach and popularized the idea. In linear mixed models, each individual is assumed to have a same form of distribution but with different parameters. Explanatory covariates are specified to be either fixed or random. Fixed effects are considered to be the population-average effects while random effects refer to subject-specific effects. This model allows explicit identification of the between- and within-subject variation. The covariance matrix of within subject measurements can have flexible structures. The timing and number of measurements of each individual are not required to be the same.  
+
+The following model was proposed by \cite{laird1982random}:	 
+
+\begin{equation}
+\bm{Y}_i = \bm{X}_i \bm{\beta}+\bm{Z}_i\bm{b}_i+\bm{e_i}
+\end{equation}
+
+where:
+
+\begin{itemize}[leftmargin=1.5in]
+	\item $\bm{Y}_i $ is the $n_i \times 1$ outcome vector for subject $i$.
+	\item $\bm{\beta}$ is the $p \times 1$ vector of unknown population parameters or fixed effect coffeicients.
+	\item $\bm{X}_i$ is the $n_i \times p$ known design matrix for fixed effects.
+	\item $\bm{b}_i$ is the $k \times 1$ unknown vector of individual effects. The $\bm{b}_i$ are distributed as $N(0, D)$, where $D$ denotes an $k \times k$ positive-definite covariance matrix. They are assumed to be independent of each other and of $\bm{e_i}$.
+	\item $\bm{Z}_i$ is the known $n_i \times k$ design matrix for random effects.
+    \item $\bm{e_i}$ is the $n_i \times 1$ vector of random error terms. It is distributed as $N(0, R_i)$, where $R_i$ denotes an $n_i \times n_i$ positive-definite covariance matrix.  
+\end{itemize}
+$\bm{Y}_i $ can then be expressed as independent normals with mean $\bm{X}_i \bm{\beta}$ and covariance matrix $\bm{R_i}+\bm{Z_i}\bm{D}\bm{Z_i}^T$.
+
+
+If the covariance matrix are completely known, the expressions for the fixed effects and random effects are
+
+\begin{equation} \label{eq:beta}
+\hat{\bm{\beta}} = (\sum_1^m \bm{X_i^T}\bm{V_i^{-1}}\bm{X_i})^{-1}(\sum_1^m \bm{X_i^T}\bm{V_i^{-1}}\bm{y_i})
+\end{equation} 
+and
+\begin{equation}\label{eq:b}
+\hat{\bm{b_i}}=\bm{D}\bm{Z_i}^T\bm{V_i^{-1}}(\bm{y_i}-\bm{X_i}\hat{\bm{\beta}})
+\end{equation} 
+where $\bm{V_i}$ = var$(\bm{y_i}) = \bm{R_i}+\bm{Z_i}\bm{D}\bm{Z_i}^T$.
+
+Their variances can be expressed as
+\begin{equation}
+var(\hat{\bm{\beta}}) = \left(\sum_1^m\bm{X_i}^T \bm{V_i^{-1}} \bm{X_i}\right)^{-1}
+\end{equation}
+and
+\begin{equation}
+var(\hat{\bm{b_i}}) = \bm{D} \bm{Z_i}^T \left\{\bm{V_i^{-1}}- \bm{V_i^{-1}}\bm{X_i}\left(\sum_1^m\bm{X_i}^T \bm{V_i^{-1}} \bm{X_i} \right)\bm{X_i}^T\bm{V_i^{-1}} \right\}\bm{Z_i}\bm{D}.
+\end{equation}
+
+
+If the covariance matrix are unknown, $\hat{\bm{\beta}}$ and $\hat{\bm{b_i}}$ can be obtained by replacing $\bm{V_i}$ by its estimate $\hat{\bm{V_i}}$ and using the same equations as equation(\ref{eq:beta}) and equation(\ref{eq:b}), where $\hat{\bm{V_i}}= \bm{\hat{R}_i}+\bm{Z_i}\bm{\hat{D}}\bm{Z_i}^T$. \cite{laird1982random} showed that this intuitive approach is actually the maximum likelihood for $\bm{\beta}$ and empirical Bayes estimates for $\bm{b}$. 
+
+Let $\bm{\theta}$ denote the vector for variance and covariance parameters in $\bm{R_i}$ and $\bm{D}$. \cite{laird1982random} provided two approaches to estimate $\bm{\theta}$. The maximum likelihood estimate $\bm{\hat{\theta}_{ML}}$ was based on maximum likelihood estimation of $\bm{\theta}$ from the marginal distribution of $\bm{y^T}$. The restricted maximum likelihood estimate $\bm{\hat{\theta}_{REML}}$ was derived from a Bayesian formulation. A flat prior for $\bm{\beta}$ was introduced and $\bm{\theta}$ was estimated from the marginal likelihood of $\bm{y}$ after integrating out $\bm{\beta}$ and $\bm{bi}$. The ML approach have downwards biased estimates of variance componets, while REML approach can produce unbiased estimates \cite{laird1982random}. The EM algorithm \cite{dempster1977maximum} is a suitable approach for parameter estimation in both formulations. It is used to estimate unobservable parameters, no data was considered missing.
+
+
+\subsection{Shape invariant model with random effects}
+\cite{lawton1972self} first introduced the concept of shape invariant model and applied the model on spirometry, spectrophotometric and optical density data. \cite{beath2007infant} developed a shape invariant model with random effects to analyze infant growth data. In this approach, the poplation is assumed to have a common characteristic function and individual curves can be obtained by shifting and scaling the common curve. The mathmatical form of the model can be expressed as 
+\begin{equation}
+f(\alpha_{0i},\alpha_{1i},\beta_{0i},\beta_{1i};t) = \alpha_{0i}+e^{\alpha_{1i}}g\left(\frac{t-\beta_{0i}}{e^{\beta_{1i}}}\right).
+\end{equation}
+Function $g(\cdot)$ represents the common characteristic curve. $\alpha_{0i},\alpha_{1i},\beta_{0i},\beta_{1i}$ are the parameters for SIM. They have direct graphical interpretations. $\alpha_{0i}$ and $\beta_{0i}$ are location parameters for y-axis and x-axis, respectively. $\alpha_{1i}$ and $\beta_{1i}$ are scale parameters. Exponentiation is used so that to scale parameters are constrained to be greater than zero. \cite{cole2010sitar} also applied a very similar model to height in puberty data except $\alpha_{1}$ was set to zero. They provided practical interpretation for the location and scale parameters. $\alpha_{0}$ was termed size, which represented a random height intercept that adjusts for differences in mean height. $\beta_{0}$ was termed tempo, which represented a random age intercept to adjust for different timing of the pubertal growth spurt. \cite{cole2010sitar} used $\gamma=-\beta_{1}$ to represent the random age scaling which adjusts for the duration of the growth spurt. It was termed velocity. 
+
+
+The common characteristic function may be parametric or non-parametric function. \cite{lawton1972self} used a linear spline and \cite{beath2007infant} used a natural cubic spline. A spline is a function defined by piecewise polynomial joined by knots. It is usually fitted over the range of the data. However, in SIM the data may be transformed by shifting and scaling outside the boundary of original data. A natural spline is constrained to be
+linear beyond the boundary knots, which allows fitting of transformed data beyond the boundaries \cite{beath2007infant}. The internal knots can be set at the time points when visits occur. Individual knots can then be removed in order to produce a parsimonious model.
+
+Growth curves can be fitted for each subject separately and population charactistics are obtained by summarizing individual parameter estimates. However, when each subject has only a small number of measurements, this apporach may produce large variability of estimates. A mixed-effects model is more advantages. \cite{beath2007infant} proposed to have the coefficients in the natural spline as fixed effects, which were constant across the population; and the scale-location parameters as random effects, which described the variability among subjects. The non-linear mixed-effcts SIM can be expressed as
+
+  
+\begin{equation}
+y_{ij} = \alpha_{0i}+e^{\alpha_{1i}}g\left(\frac{t_j-\beta_{0i}}{e^{\beta_{1i}}}\right)+e_{ij}.
+\end{equation}
+where 
+\begin{center}
+$\begin{pmatrix}
+\alpha_{0i} \\ 
+\alpha_{1i} \\
+\beta_{0i} \\
+\beta_{1i}
+\end{pmatrix}
+\sim N(0, \Psi)$
+
+\end{center}
+and
+
+$$ e_{ij} \sim N(0,\sigma^2) $$
+
+Individual curves can be predicted using best linear unbiased prediction (BLUP) of random effects. Population curves can be obtained using fixed effects and setting random effects to zero.
+
+Time independent covariates can be included in the model by modifying parameters, such as allowing the location parameters to be the sum of random effects and a linear
+function of the covariates and modifying the time directly for scale parameter. For example, including a single covariate $z_i$ which affects size and growth rate, the model can be expressed as
+ \begin{equation}
+ y_{ij} = \alpha_{0i}+\alpha z_i+e^{\alpha_{1i}}g\left(\frac{e^{\beta z_i}t_j-\beta_{0i}}{e^{\beta_{1i}}}\right)+e_{ij}.
+ \end{equation}
+ This model is very interpretable. A unit increase in $z_i$ affects subject’s size and growth rate by $e^\alpha$ and $e^\beta$.
+ 
+ This kind of models can be fitted using nlme package \cite{pinheiro2011mixed} in R. It was recommended to fit nonlinear least-squares model for initial parameter estimates for fixed effects \cite{beath2007infant}. 
+ 
+\section{Survival submodel}
+Survival analysis is a set of methods for analyzing data where the outcome variable is the time to the occurrence of an event of interest. The outcome does not need to be death. "Survival" here means free of a particular event over time. The event may be heart attack, cancer remission, machine part failure, etc. The time-to-event can be measured in days, months, years, etc. The questions in survival analysis includes: do some variables (e.g., age, sex, treatment, etc) affect participants' chances of survival, what is the probability for an individual survives past a certain time, etc.
+
+One of the major differences between survival analysis and ordinary linear regression is that the latter is able to handle censoring of observations. Censoring occurs when some information is available for survival time but the information is not complete.There are three types of censoring: right, left, and interval. Right censoring occurs if an individual experience the event after the observation time. Left censoring occurs an individual experience the event before the observation time. Interval censoring occurs if we don't know the exact event time but we know the event occurred within some given time period. Right censoring is the most common type. Censoring is often assumed to be non-informative in order to make use of the censored data. The underlying mechanisms to censoring should be unrelated to the event occurance so that the observations which are censored would have the same survival time distribution as if they were observed. Many sort of survival analysis, including Kaplan-Meier estimation and Cox model, can be invalidated if this assumption is not satisfied. 
+
+In survival analysis, two functions are used to describe the event times: survival function and hazard function. Let $T$ be a non-negative random variable representing the time to the occurrence of the event with probability density function $f(t)$ and cumulative distribution function $F(t)$. The survival function gives the probability that a subject will 'survive' up to time $t$:
+
+\begin{equation}
+\begin{split}
+S(t) &= Pr\{T \geq t\} \\
+     &=1-F(t) \\
+     &=\int_{t}^{\infty} f(x)dx.  
+\end{split}
+\end{equation}
+The survival function is non-increasing. At time $t=0$, $S(t) =1$, which means the probability of surviving past $t=0$ is 1. At time $t=\inf$, $S(t) =0$, as time goes to infinity, the survival probability goes to 0.
+The hazard function gives the instantaneous rate of occurrence of the event at time $t$ given that the event has not occurred before:
+\begin{equation}
+\begin{split}
+h(t) &= \lim_{dt \to 0} \frac{Pr\{t \leq T\leq t+dt|T\geq t\}}{dt} \\
+     &= \frac{f(t)}{S(t)}
+\end{split}
+\end{equation}
+The survival and hazard functions provide equivalent characterizations of the distribution of survival time. If we know any one of the two functions, we can derive the other function:
+\begin{equation}
+\begin{split}
+S(t)&= exp\{-\int_{0}^{t}h(x)dx \} \\
+h(t)&=-\frac{d}{dt}logS(t)
+\end{split}
+\end{equation}
+Many quantities of interest can then be estimated from either the hazard or survival function. 
+
+
+
+
+\subsection{Cox proportional hazards model}
+One of the most popular regression methods for survival analysis is Cox proportional hazards model \cite{cox1972regression}. It allows estimation of  the relationship between survival and several variables through the hazard function without any consideration of the shape of the baseline hazard function. 
+
+In a Cox proportional hazards model, the relationship between predictors and the time-to-event is investigated through the hazard function. A Cox model assumes that
+
+\begin{equation}
+h(t)=h_0(t)exp(\beta_1z_1+\beta_2z_2+...+\beta_pz_p)
+\end{equation}
+where 
+\begin{itemize}[leftmargin=1.5in]
+	\item $h(t)$ is the expected hazard at time t for a subject.
+	\item $h_0(t)$ is the hazard when all independent variables are euqal to zero. It is called the baseline hazard.
+	\item $z_1,...,z_p$ are independent variables and $\beta_1,...,\beta_p$ are their coefficients. We assume the effect of the covariatesis the same at all times.
+\end{itemize}
+The above model assumes that effect of predicors on the hazard is multiplicative and it is constant over time. The basline hazard function $h_0(t)$ can have any shape as a functin of $t$ so Cox proportional hazards model is called a semiparametric model. 
+
+A Cox model is usually interpreted using hazard ratio which is the ratio of the hazard rates corresponding to the conditions determined by two sets of predictors. The estimated coefficients in the Cox model represent the change in the expected log of the hazard ratio relative to a one unit change in respective covariates. For example, if there is a one unit increase in $z_k$ while other covariates being fixed, then
+
+\begin{equation}
+\begin{split}
+log\left[\frac{h(t|z_k+1)}{h(t|z_k)}\right] &=log(h(t|z_k+1)) - log(h(t|z_k)) \\
+&= \beta_k(z_k+1) - \beta_kz_k \\
+&= \beta_k
+\end{split}
+\end{equation}
+Therefore,$exp(\beta_k)$ is the hazard ratio associated with one unit incease in $z_k$. If the hazard ratio is less than 1, then the predictor is associated with improved survival. If the hazard ratio is greater than 1, then the predictor is associated with decreased survival. A hazard ratio close to 1 means the predictor has no effect on survival.
+
+One of the crucial assumptions in Cox model is that the hazards are proportional over time (so the name of proportional hazards model), which means the effect of covariates is constent over time. For example, with two different sets of predictors $\bm{z}$ and $\bm{z'}$, 
+
+\begin{equation}
+\frac{h(t|\bm{z})}{h(t|\bm{z'})} = \frac{h_0(t)exp(\bm{z}\bm{\beta})}{h_0(t)exp(\bm{z'}\bm{\beta})}=e^{(\bm{z}-\bm{z'})\bm{\beta}},
+\end{equation} 
+which is independent of time for all $t$. Violation of this assumtpion may result questionable result so this assumption must be checked. Several approaches are available to assess the proportionality assumption, some methods involve graphical tools and others are built on statistical tests. For categorical variables, "log-log" transformation of the Kaplan-Meier survival curves can be plotted for different categories. If the proportionality assumption holds, the curves should not intersect with each other and roughly be parallel over time. A plot  of Schoenfeld residuals versus time can be used as a graphical diagnostic for continuous predictors \cite{grambsch1994proportional}. Under proportional hazards, the Schoenfeld residuals should scatter around zero randomly. A statistical test which correlates scaled Schoenfeld residuals with time is also available to test whether the slope of residuals on time is zero or not \cite{grambsch1994proportional}. A non-zero slope means that the proportional hazard assumption has been violated. Violation of the proportional hazard assumption may be resolved by fitting a stratified Cox model in which the baseline hazard function can be different in stratums or including time-varying covariates in the model \cite{george2014survival}.
+
+
+Suppose we have $n$ subjects with survival time described by a survivor function $S(t)$， with a hazard function $h(t)$ and density $f(t)$. Let $t_i$ denote the observed time for subject $i$ and $d_i$ denote the indicator which equals to 1 if the subject is not censored and $d_i$  equals to 0 otherwise. For non-censored subjects, $t_i$ is the event time so the likelihood function can be expressed as 
+
+\begin{equation}
+L_i=f(t_i)=S(t_i)h(t_i).
+\end{equation}
+ For censored events, we only know that the subject $i$ is still free of event at time $t_i$ so the likelihood is just $S(t_i)$. Both types shares the same survival function under non-informative censoring. Therefore the likelihood can be written as 
+ 
+ \begin{equation}
+ L=\prod_{i}L_i=\prod_{i}S(t_i)h(t_i)^{d_i}.
+ \end{equation}
+Ordinary likelihood approaches cannot be applied to estimated parameters in Cox model since the baseline hazard function $h_0(t)$ is unspecified. \cite{cox1972regression} developed a 'conditional likelihood' to estimate the parameters. The approach was later  formalized and renamed to 'partial likelihood' in \cite{cox1975partial}. Cox's analysis goes conditionally under the set of $\{(t_{i})\}$ in which failure occurs. Assuming there is no ties in event time, let $t_{(1)}<t_{(2)}<...<t{(n)}$ be the ordered observed failure times and $R_{t_{(i)}}$ be the risk set of subjects at time $t_{(i)}$. For a specific failure time $t_{(i)}$, conditionally on the fact that a subject failed and risk set $R_{t_{(i)}}$, the probability of the observed event can be expressed as
+\begin{equation}
+\frac{exp(\bm{z_{(i)}'}\bm{\beta})}{\sum\limits_{l \in R_{t_{(i)}}} exp(\bm{z_{(l)}'}\bm{\beta})}
+\end{equation}
+Multiplying factors of all failure times results the partial likelihood. 
+
+\begin{equation}
+\sum\limits_{i=1}^n \left\{exp(\bm{z_{(i)}'}\bm{\beta}) - log {\sum\limits_{l \in R_{t_{(i)}}} exp(\bm{z_{(l)}'}\bm{\beta})}\right\}
+\end{equation}
+\cite{cox1972regression} obtained maximum-likelihood estimates of the above using the usual iterative way. In this approach, the baseline hazard function $h_0(t)$ is considered to be a nuisance function and removed completely from the inference process. \cite{efron1977efficiency} showed that the Cox's partial likelihood approach was asympotically equivalent to the likelihood approach based on all the data under very realistic conditions.
+
+\subsection{Extension: time-dependent covariates}
+
+\subsection{aft?}
+
+
+\section{Classical approaches to joint modeling}
+A joint model is comprised of two linked submodels: a model for event occurrence and a model for longitudinal measurements. There are three major ways to link these two parts together: (1) a simple approach using the observed longitudinal measurements as time-dependent covariates in a survival model; (2) a two-stage approach where the longitudinal process is first fitted separately, then the longitudinal fitted values are used as covariates in the survival model; (3) a shared random effects approach where in the models for the
+longitudinal and time-to-event likelihoods.
+
+Suppose longitudinal measurements and time-to-event data are available for $m$ subjects. Let $\bm{y}_i = \{y_i(t_{ij}), j=1,...,n_i\}$ denote the longitudinal responses for the $i$th subject at times $\{t_{ij}, j=1,...,n_i\}$. Denote $T_i^*$ to be a true failure time, $C_i$ to be a censoring time, $T_i=min(T_i^*,C_i)$ to be an observed failure time and $\delta_i=I(T_i^* \le C_i)$ to be an event indicator.
+
+\subsection{A survival model with time-dependent covariates}
+One of the simplest way to incorporate association between the longitudinal and time-to-event processes is to include the observed longitudinal measurements as time-dependent covariates in a survival model. The hazard of failure at time $t$ for patient $i$ is modelled as \cite{sweeting2011joint}:
+
+\begin{equation}
+ h_i(t)=h_0(t)exp(\alpha y_i(t)+\bm{x}_i^T(t) \bm{\beta}), 
+\end{equation}
+where $h_0(t)$ is a baseline function, $\alpha$ is a coefficient for the observed longitudinal measurement and $\bm{\beta}$ is a set of regression parameters for other explanatory variables $\bm{x}_i$.
+
+There are several drawbacks of this approach. As discussed by \cite{sweeting2011joint}, \cite{tsiatis2004joint}, \cite{yu2004joint} and many other papers, in order to plug-in the longitudinal measurements into the survival model and use partial likelihood to estimate the hazard rate, we must know the values of the time varying measurements for all subjects at risk at any failure time point. However, longitudinal measurements typically are only collected at certain examination time points $t_{ij}$, and thus no measurements exist for subjects at risk when a failure occurs between scheduled visits. One popular approach to address this difficulty is to replace the unobserved, true longitudinal measurement by the observed,  most recent value. Hence the hazard function become
+\begin{equation}
+ h_i(t)=h_0(t)exp(\alpha y_i(t_{ij})+\bm{x}_i^T(t_{ij}) \bm{\beta}) 
+\end{equation}
+$t_{ij}\le t < t_{i,j+1}$.
+Sweeting and Thompson found that naively using the observed data as covariates led to severe underestimation \cite{sweeting2011joint}. \cite{gail1981evaluating} adapted this approach to use the most recent value only if it was measured within certain time range prior to the failure time, otherwise the subject was excluded for that event. This substitution approach is problematic since it does not account for measurement error of the longitudinal value \cite{tsiatis1995modeling}. The estimated relative risk in the Cox model will be underestimated due to measurement error \cite{prentice1982covariate}. This problem is exacerbated if visit times are sparse. 
+
+\subsection{A two-stage model}
+An alternative approach is a two-stage model. In the first stage, a model, usually a random effect model \cite{laird1982random}, is fit to the longitudinal data and the estimators and imputed longitudinal values are obtained for each time point. Then in the second stage, these imputed values are inserted into the survival model as covariates. This approach estimates the regression coefficient in survival model using approximations of the true longitudinal values. \cite{tsiatis1995modeling} adapted this model in a HIV trial in order to investigate the association between CD4 counts and survival. A linear mixed model was fit to the longitudinal trajectory and then the fitted values were treated as true values and inserted in the Cox model as a time varying covariate. Two-stage models were also investigated by \cite{dafni1998evaluating} and \cite{bycott1998comparison}. 
+
+This approach is better than naively using the observed longitudinal data in the Cox model. This approach allows interpolating longditudinal values between visits and it also adjusts measurement error by using the entire covariate history \cite{faucett1996simultaneously}. Simulation shows that this approach yields improved efficiency of statistical inferences and reduced bias of the parameter estimates in the Cox model \cite{dafni1998evaluating},\cite{bycott1998comparison}. The two-stage approach is also quick to implement using standard software \cite{sweeting2011joint}. However, the two-stage approach also have some drawbacks. No survival information is used in the longitudinal submodel, which could result in efficiency loss. Also, this approach does not account for event-dependent drop-out. NOT FINISHED
+
+ \cite{sweeting2011joint} conducted extensive simulations in order to assess the perfomrances of several approaches. The models were fitted using a linear mixed-effects model for the longitudinal process, and a parametric model with constant baseline hazard or a semi-parametric Cox model for the survival data. They found that two-stage approach generally underestiamted the asssociation parameter and had poor coverage properties.    
+
+\subsection{Shared random effects approach}
+model detail 
+
+reduce bias
+
+improve efficiency
+
+correct for informative drop out
+
+\section{Association Structures}
+\subsection{Time-dependent associations}
+current;
+
+lag;
+
+rate/derivate
+
+\subsection{Time-independent associations}
+random intercept/ slope
+
+random change point
+
+\section{Estimation?}
+
+\section{Application examples}
+better inference on longitudinal process;
+
+better inference on survival process;
+
+association between the two, surrogate marker.
+
+\bibliographystyle{apacite} 
+\bibliography{reference}	
+
+\end{document}
