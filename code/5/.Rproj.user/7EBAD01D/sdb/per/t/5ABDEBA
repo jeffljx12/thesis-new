@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\nlibrary(splines)\nlibrary(tidyverse)\nlibrary(MASS)\nlibrary(nlme)\nlibrary(lme4)\n\n# -------------------- make data ----------------------#\nmakeDataset = function(n=50,m=20,seed=123,tau1=7.3,tau2=14.6) {\n  set.seed(seed)\n  \n  # common time\n  time = seq(1,20,length.out = m)\n  \n  # knots\n  #tau1 = time[ceiling(m/3)]\n  #tau2 = time[ceiling(m/3*2)]\n  \n  # fixed effects\n  b0 = 20\n  b1 = 10\n  b2 = 7\n  b3 = 0.7\n  b4= 0.5\n  b5= -1\n  \n  sim.dt =data.frame()\n  commom_corr = 0.3\n  \n  Sigma = .1*matrix(c(1,commom_corr,commom_corr,\n                      commom_corr,1,commom_corr,\n                      commom_corr,commom_corr,1),\n                    3,byrow=T)\n  \n  random_effects = mvrnorm(n = n, mu = rep(0, 3), Sigma = Sigma, empirical = TRUE)\n  \n  for (i in 1:n){\n    \n    # random effects alpha0, beta0, beta1\n    r1_i = random_effects[i,1]\n    r2_i = random_effects[i,2]\n    r3_i = random_effects[i,3]\n    # transformed time\n    time_i = (time-r2_i)/exp(r3_i)\n    \n    # calculate outcome:\n    \n    # degree = 1, 1 knot\n    spline_d1k1 = b0+b1*time_i+b2*ifelse(time_i-tau1>0,time_i-tau1,0) + rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    bspline_d1k1 =  bs(time_i,knots = tau1,degree=1, intercept=T) %*% c(b0,b1,b2) + rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    # degree = 2, 1 knot\n    spline_d2k1 = r1_i*500+b0+b1*time_i+b2*time_i^2+b3*ifelse(time_i-tau1>0,(time_i-tau1)^2,0) + rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    bspline_d2k1 =  bs(time_i,knots = tau1,degree=2, intercept=T) %*% c(b0,b1,b2,b3)*100 + rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    # degree = 3, 2 knot2\n    spline_d3k2 =  r1_i*500+b0 + b1*time_i + b2*time_i^2 + b3*time_i^3 +\n      b4*ifelse(time_i-tau1>0,(time_i-tau1)^3,0) + \n      b5*ifelse(time_i-tau2>0,(time_i-tau2)^3,0) +\n      rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    bspline_d3k2 =  bs(time_i,knots = c(tau1,tau2),degree=3, intercept=T) %*% c(b0,b1,b2,b3,b4,b5)+ rnorm(n=length(time_i),mean=0,sd = 1)\n    \n    # make data\n    dt_i=data.frame(id=i,\n                    tau = tau1*exp(r3_i)+r2_i,\n                    age=time ,\n                    transformedT = time_i,\n                    y.spline_d1k1 = spline_d1k1,\n                    y.bspline_d1k1= bspline_d1k1,\n                    y.spline_d2k1 = spline_d2k1,\n                    y.bspline_d2k1 = bspline_d2k1,\n                    y.spline_d3k2 = spline_d3k2,\n                    y.bspline_d3k2 = bspline_d3k2\n                    \n    )\n    \n    sim.dt = rbind(sim.dt,dt_i)\n  }\n  return(sim.dt)\n  \n}\n\nsim.dt = makeDataset()",
+    "created" : 1542336979894.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3419147371",
+    "id" : "5ABDEBA",
+    "lastKnownWriteTime" : 1542339213,
+    "last_content_update" : 1542395503643,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5/makeDs.R",
+    "project_path" : "makeDs.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

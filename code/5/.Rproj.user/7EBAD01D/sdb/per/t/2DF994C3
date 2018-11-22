@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nsource('makeDs.r')\n\n#------------------------------- test nlmer ------------------------------#\n# specifiy model\n# d2k1_model = function(time,beta0,beta1,beta2,beta3,ra2i,ra3i)\n#   beta0+\n#   beta1*((age-ra2i)/exp(ra3i))+\n#   beta2*((age-ra2i)/exp(ra3i))^2+\n#   beta3*((age-ra2i)/exp(ra3i)-7.3 > 0)*((age-ra2i)/exp(ra3i)-7.3)^2\n\n# d2k1_model_a = function(time,beta0,beta1,beta2,beta3,ra2i,ra3i)\n#   beta0+\n#   beta1*((age-ra2i)/exp(ra3i))+\n#   beta2*((age-ra2i)/exp(ra3i))^2+\n#   beta3*((age-ra2i)/exp(ra3i)-7.3)^2\n\n# cannot do gradient with condition ?\n\n# if (age-ra2i)/exp(ra3i)-7.3) > 0\nd2k1_model_a = ~beta0+beta1*((age-ra2i)/exp(ra3i))+beta2*((age-ra2i)/exp(ra3i))^2+beta3*((age-ra2i)/exp(ra3i)-7.3)^2\nd2k1_model_g_a = deriv(d2k1_model_a, \n                     namevec =c(\"beta0\",\"beta1\",\"beta2\",\"beta3\",\"ra2i\",\"ra3i\"),\n                     function.arg = c('age',\"beta0\",\"beta1\",\"beta2\",\"beta3\",\"ra2i\",\"ra3i\")\n)\n\n# if (age-ra2i)/exp(ra3i)-7.3) <= 0\nd2k1_model_b = ~beta0+beta1*((age-ra2i)/exp(ra3i))+beta2*((age-ra2i)/exp(ra3i))^2\nd2k1_model_g_b = deriv(d2k1_model_b, \n                       namevec =c(\"beta0\",\"beta1\",\"beta2\",\"beta3\",\"ra2i\",\"ra3i\"),\n                       function.arg = c('age',\"beta0\",\"beta1\",\"beta2\",\"beta3\",\"ra2i\",\"ra3i\")\n)\n\n# run nlmer\nnlmer(y.spline_d2k1 ~ ((age-ra2i)/exp(ra3i)-7.3 > 0)*d2k1_model_g_a(age,beta0,beta1,beta2,beta3,ra2i,ra3i)+\n                      d2k1_model_g_b(age,beta0,beta1,beta2,beta3,ra2i,ra3i) ~ (ra2i+ra3i|id),\n      data= sim.dt,\n      start = c(beta0=19, beta1= 9,beta2=6 ,beta3=0.5 ,ra2i=0,ra3i=0)\n)\n\n\n?nlmer\n#------------------------- brms (slow: 1 hr to run) ------------------------#\n#install.packages('brms')\nlibrary(brms)\nf1 <- y.spline_d2k1 ~ beta0+\n  beta1*((age-ra2i)/exp(ra3i))+\n  beta2*((age-ra2i)/exp(ra3i))^2+\n  beta3*((age-ra2i)/exp(ra3i)-7.3 > 0)*((age-ra2i)/exp(ra3i)-7.3)^2\n\nprior_1 <- c(set_prior('normal(20, 0.1)',nlpar = 'beta0'),\n             set_prior('normal(10, 0.1)',nlpar = 'beta1'),\n             set_prior('normal(7, 0.1)',nlpar = 'beta2'),\n             set_prior('normal(1, 0.1)',nlpar = 'beta3')\n)\n\nform = bf(f1,nl = TRUE)+list(beta0~1,beta1~1,beta2~1,beta3~1,ra2i~(1|2|id),ra3i~(1|2|id))\n\nn1_b <- brm(form,data = sim.dt,prior = prior_1)\n\nsummary(n1_b)\n\n\n#----------------------------- saemix ---------------------------------#\n\n\n",
+    "created" : 1542393521391.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "843077884",
+    "id" : "2DF994C3",
+    "lastKnownWriteTime" : 1542393904,
+    "last_content_update" : 1542393904467,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5/test other packages.R",
+    "project_path" : "test other packages.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

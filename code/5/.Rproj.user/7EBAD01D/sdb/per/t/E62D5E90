@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\n#---------------------------------- nlme (assume knots are known) --------------------------_#\nsource('makeDs.r')\n\n# d1k1\nrm(nlme_d1k1)\nnlme_d1k1 <- nlme(y.spline_d1k1 ~  beta0+beta1*(age-ra2_i)/exp(ra3_i)+\n                    beta2*ifelse((age-ra2_i)/exp(ra3_i)-7.3>0,(age-ra2_i)/exp(ra3_i)-7.3,0),\n                  data = sim.dt,\n                  fixed = beta0 + beta1 + beta2 ~1,\n                  random = ra2_i+ra3_i~1,\n                  groups = ~ id,\n                  start = c(18, 8,9),\n                  na.action = na.omit)\n\nsummary(nlme_d1k1)\n\nplot(sim.dt$y.spline_d1k1 ~fitted(nlme_d1k1) )\n\n# d2k1\nrm(nlme_d2k1)\n\nd2k1_model = function(time,beta0,beta1,beta2,beta3,ra2_i,ra3_i,tau1){\n  time_i = (time - ra2_i)/exp(ra3_i)\n  return(beta0+beta1*time_i+beta2*time_i^2+beta3*ifelse(time_i-tau1>0,(time_i-tau1)^2,0))\n  \n}\n\nnlme_d2k1 <-nlme(y.spline_d2k1 ~ d2k1_model(age,beta0,beta1,beta2,beta3,ra2_i,ra3_i,tau1=7.3),\n                 data = sim.dt,\n                 fixed = beta0 + beta1 + beta2 +beta3~1,\n                 #random =  ra2_i+ra3_i~1,\n                 random =   beta0 +ra2_i+ra3_i~1,\n                 groups = ~ id,\n                 start = c(18, 8,9,0.8),\n                 control = nlmeControl(pnlsTol = .01, msVerbose = TRUE),\n                 na.action = na.omit)\n\n\n# nlme_d2k1 <- nlme(y.spline_d2k1 ~ beta0+\n#                     beta1*((age-ra2_i)/exp(ra3_i))+\n#                     beta2*((age-ra2_i)/exp(ra3_i))^2+\n#                     beta3*ifelse((age-ra2_i)/exp(ra3_i)-7.3 > 0,((age-ra2_i)/exp(ra3_i)-7.3)^2,0),\n#                   \n#                   data = sim.dt,\n#                   fixed = beta0 + beta1 + beta2 +beta3~1,\n#                   random =  ra2_i+ra3_i~1,\n#                   groups = ~ id,\n#                   start = c(18, 8,9,0.8),\n#                   control = nlmeControl(pnlsTol = .01, msVerbose = TRUE),\n#                   na.action = na.omit)\n\nsummary(nlme_d2k1)\nplot(sim.dt$y.spline_d2k1 ~ fitted(nlme_d2k1))\n\n\n# d3k2\nrm(nlme_d3k2)\n\nd3k2_model = function(time,beta0,beta1,beta2,beta3,beta4,beta5,ra2_i,ra3_i,tau1,tau2){\n  \n  time_i = (time - ra2_i)/exp(ra3_i)\n  \n  return(beta0 + beta1*time_i + beta2*time_i^2 + beta3*time_i^3 +\n           beta4*ifelse(time_i-tau1>0,(time_i-tau1)^3,0) + beta5*ifelse(time_i-tau2>0,(time_i-tau2)^3,0)\n  )\n  \n}\n\nnlme_d3k2 = nlme(y.spline_d3k2 ~ d3k2_model(age,beta0,beta1,beta2,beta3,beta4,beta5,ra2_i,ra3_i,tau1=7.3,tau2=14.6),\n                 data = sim.dt,\n                 fixed = beta0 + beta1 + beta2 +beta3+beta4+beta5~1,\n                 #random = ra2_i +ra3_i~1,\n                 random = beta0 +ra2_i +ra3_i~1,  #random intercept works when ra1_i is sufficiently large\n                 groups = ~ id,\n                 start = c(18, 8,9,0.8,0.3,-0.9),\n                 control = nlmeControl(pnlsTol = .01, msVerbose = TRUE),\n                 na.action = na.omit)\n\nsummary(nlme_d3k2)\nplot(sim.dt$y.spline_d3k2 ~ fitted(nlme_d3k2))\n",
+    "created" : 1542336980997.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3789500911",
+    "id" : "E62D5E90",
+    "lastKnownWriteTime" : 1542336950,
+    "last_content_update" : 1542336950,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5/test nlme.R",
+    "project_path" : "test nlme.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

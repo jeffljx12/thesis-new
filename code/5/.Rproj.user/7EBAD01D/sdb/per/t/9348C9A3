@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nsource('makeDs.r')\n\n# b-spline d2k1\nrm(nlme_b_d2k1)\n\nb_d2k1 <- function(time,beta0,beta1,beta2,beta3,ra2_i,ra3_i){\n  \n  splinecoefs <- as.matrix(cbind(beta0,beta1,beta2,beta3))\n  as.vector(t(matrix(rep(1,4),ncol=4) %*%\n                        t(splinecoefs*as.matrix(bs((time-ra2_i)/exp(ra3_i),degree=2,\n                                                   knots=7.3,intercept=T)))))\n}\n\n\nnlme_b_d2k1 <-\n  nlme(y.bspline_d2k1 ~ b_d2k1(age,beta0,beta1,beta2,beta3,ra2_i,ra3_i),\n       data=sim.dt,\n       fixed = beta0 + beta1 + beta2 + beta3 ~ 1,\n       random = ra2_i+ ra3_i ~ 1 | id,\n       start = c(18, 8,9,0.5)    # this initial value works , however c(18, 8,9,0.5)*100 doesnot work? neither increasing m\n)\n\nsummary(nlme_b_d2k1)\nplot(sim.dt$y.bspline_d2k1 ~ fitted(nlme_b_d2k1),xlab='fitted value',ylab='observed value')  #this plot seems wrong\n \n # try b-spline d3k2\nrm(nlme_b_d3k2)\n\nb_d3k2 = function(time,beta0,beta1,beta2,beta3,beta4,beta5,ra2_i,ra3_i){\n  \n  splinecoefs <- as.matrix(cbind(beta0,beta1,beta2,beta3,beta4,beta5))\n  \n  as.vector(t(matrix(rep(1,6),ncol=6) %*%\n                t(splinecoefs*as.matrix(bs((time-ra2_i)/exp(ra3_i),degree=3,\n                                           knots=c(7.3,14.6),intercept=T)))))\n  \n}\n  \n\n\nnlme_b_d3k2 = nlme(y.bspline_d3k2~b_d3k2(age,beta0,beta1,beta2,beta3,beta4,beta5,ra2_i,ra3_i),\n                   data = sim.dt,\n                   fixed = beta0 + beta1 + beta2 +beta3+beta4+beta5 ~1,\n                   random = ra2_i+ra3_i ~1,\n                   groups = ~ id,\n                   start = c(18,8,9,0.5,0.3,-0.7)\n)\n\n\n",
+    "created" : 1542336980453.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4288301428",
+    "id" : "9348C9A3",
+    "lastKnownWriteTime" : 1542399002,
+    "last_content_update" : 1542399002844,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5/test bspline.R",
+    "project_path" : "test bspline.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
