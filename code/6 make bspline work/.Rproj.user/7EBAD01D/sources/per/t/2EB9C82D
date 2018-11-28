@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543424513390.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1942096795",
+    "id" : "2EB9C82D",
+    "lastKnownWriteTime" : 1543432527,
+    "last_content_update" : 1543436541994,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/6 make bspline work/bspline fit.R",
+    "project_path" : "bspline fit.R",
+    "properties" : {
+        "cursorPosition" : "44,50",
+        "scrollLine" : "16",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

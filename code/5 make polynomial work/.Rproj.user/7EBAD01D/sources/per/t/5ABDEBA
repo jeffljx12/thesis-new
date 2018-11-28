@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542336979894.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3419147371",
+    "id" : "5ABDEBA",
+    "lastKnownWriteTime" : 1542339213,
+    "last_content_update" : 1542395503643,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5 make polynomial work/makeDs.R",
+    "project_path" : "makeDs.R",
+    "properties" : {
+        "cursorPosition" : "78,4",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

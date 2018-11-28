@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543431037962.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3386269043",
+    "id" : "D594CA22",
+    "lastKnownWriteTime" : 1543432532,
+    "last_content_update" : 1543432532525,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/6 make bspline work/makeDT.R",
+    "project_path" : "makeDT.R",
+    "properties" : {
+        "cursorPosition" : "27,19",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

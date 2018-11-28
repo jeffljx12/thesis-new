@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543285909400.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2904387542",
+    "id" : "7BE1FEA9",
+    "lastKnownWriteTime" : 1543432610,
+    "last_content_update" : 1543432610395,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/6 make bspline work/some test.R",
+    "project_path" : "some test.R",
+    "properties" : {
+        "cursorPosition" : "26,13",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

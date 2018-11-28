@@ -1,0 +1,27 @@
+
+#1 no intercept in bs
+bspline = bs(1:20,degree=3,knots=c(7.3,14.6),Boundary.knots=c(-10,30),intercept=F) %*% c(10,20,30,40,50)
+
+
+fit1=lm(bspline~bs(1:20,degree=3,knots=c(7.3,14.6),Boundary.knots=c(-10,30),intercept=F))
+
+summary(fit1)
+
+#2 intercept in bs
+bspline2 = bs(1:20,degree=3,knots=c(7.3,14.6),Boundary.knots=c(-10,30),intercept=T) %*% c(10,20,30,40,50,60)
+
+# has to fit with no intercept in lm
+fit2=lm(bspline2~0+bs(1:20,degree=3,knots=c(7.3,14.6),Boundary.knots=c(-10,30),intercept=T))
+
+summary(fit2)
+
+
+# boundary knots is important
+bspline3 = bs(1:20,degree=3,knots=c(7.3,14.6),Boundary.knots=c(-10,30),intercept=F) %*% c(10,20,30,40,50)
+
+# has to fit with no intercept in lm
+fit3=lm(bspline3~bs(1:20,degree=3,knots=c(7.3,14.6),
+                    #Boundary.knots=c(-10,30),
+                    intercept=F))
+
+summary(fit3)

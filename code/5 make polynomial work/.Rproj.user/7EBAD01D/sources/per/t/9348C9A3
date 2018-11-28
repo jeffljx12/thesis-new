@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542336980453.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4288301428",
+    "id" : "9348C9A3",
+    "lastKnownWriteTime" : 1542399002,
+    "last_content_update" : 1542399002844,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5 make polynomial work/test bspline.R",
+    "project_path" : "test bspline.R",
+    "properties" : {
+        "cursorPosition" : "49,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

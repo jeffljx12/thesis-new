@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# function to draw spline\n\nsimCurve = function(t,intercept.x = 0,intercept.y=0,speed=0,tau,degree=3,beta,gamma, errorTerm =F){\n  \n  #\n  m = length(t)\n  k = length(tau) \n  \n  # check coefficients length\n  if ((degree != length(beta) -1) | (length(tau) != length(gamma)))\n  {\n    print('check coeffients length')\n  \n  } else {\n    \n  # individual t\n  t_i = (t-intercept.x)/exp(speed)\n  \n  # spline\n  design.m1 = matrix(rep(1,m),nrow=m)\n  for (i in 1:degree)\n  {\n    design.m1=cbind(design.m1,t_i^i)\n  }\n  \n  design.m2 = matrix(rep(1,m),nrow=m)\n  for (i in 1:k)\n  {\n    design.m2=cbind(design.m2, ((t_i-tau[i])>0)*(t_i-tau[i])^degree)\n  }\n  design.m2 = design.m2[,-1]\n  \n  out = intercept.y + design.m1  %*% beta + design.m2  %*% gamma + rnorm(n=length(t_i),mean=0,sd = 1)*errorTerm\n\n  return(out)\n  }\n}\n\nsim.d3k2 = simCurve(1:20,intercept.x = 0,intercept.y=0,speed=0,tau=c(7.3,14.6),degree=3,beta=c(20,10,7,0.7),gamma=c(0.5,-1),errorTerm=F)\n\n# test bs\n?bs\nlibrary(splines)\nlm(sim.d3k2 ~ bs(1:20,intercept=T, knots=c(7.3,14.6),degree=3))\n\nbs(1:20,intercept=T, knots=c(7.3,14.6),degree=3)\n\n",
+    "created" : 1543284512003.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1844016124",
+    "id" : "CBDD33EF",
+    "lastKnownWriteTime" : 1542857697,
+    "last_content_update" : 1542857697,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/5/spline function.R",
+    "project_path" : "spline function.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

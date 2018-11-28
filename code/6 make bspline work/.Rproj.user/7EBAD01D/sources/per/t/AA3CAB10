@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543285538711.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2562663648",
+    "id" : "AA3CAB10",
+    "lastKnownWriteTime" : 1543432530,
+    "last_content_update" : 1543432530438,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/6 make bspline work/curve function.R",
+    "project_path" : "curve function.R",
+    "properties" : {
+        "cursorPosition" : "63,27",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}
