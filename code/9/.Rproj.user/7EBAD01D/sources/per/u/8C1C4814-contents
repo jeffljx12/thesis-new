@@ -1,0 +1,19 @@
+x <- 1
+h <- function() {
+  y <- 2
+  i <- function() {
+    z <- 3
+    c(x, y, z)
+  }
+  i()+1
+}
+h()
+rm(x, h)
+
+environment(as.formula("y ~ x",showEnv=T))
+environment(as.formula("y ~ x", env = new.env()))
+
+as.formula("y ~ x",showEnv=T)
+
+
+as.formula(object, env = parent.frame())

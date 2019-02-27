@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549467242446.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1954010385",
+    "id" : "71AF9902",
+    "lastKnownWriteTime" : 1549513124,
+    "last_content_update" : 1549513124541,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/9/siReg.R",
+    "project_path" : "siReg.R",
+    "properties" : {
+        "cursorPosition" : "50,42",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543285538711.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4095451899",
+    "id" : "AA3CAB10",
+    "lastKnownWriteTime" : 1543599136,
+    "last_content_update" : 1543599136810,
+    "path" : "C:/Users/jeffl/Desktop/6 make bspline work/curve function.R",
+    "project_path" : "curve function.R",
+    "properties" : {
+        "cursorPosition" : "50,103",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

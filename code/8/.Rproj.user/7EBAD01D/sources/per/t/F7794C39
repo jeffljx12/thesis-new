@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1548390398737.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3871810856",
+    "id" : "F7794C39",
+    "lastKnownWriteTime" : 1548433104,
+    "last_content_update" : 1548433104544,
+    "path" : "C:/Users/jeffl/Desktop/1_25_2019/run nlme.R",
+    "project_path" : "run nlme.R",
+    "properties" : {
+        "cursorPosition" : "97,35",
+        "scrollLine" : "74"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

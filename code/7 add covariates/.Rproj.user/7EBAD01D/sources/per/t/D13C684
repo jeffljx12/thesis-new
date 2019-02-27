@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1548302628983.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3614728480",
+    "id" : "D13C684",
+    "lastKnownWriteTime" : 1548306145,
+    "last_content_update" : 1548306145581,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/7 add covariates/run nlme.R",
+    "project_path" : "run nlme.R",
+    "properties" : {
+        "cursorPosition" : "1,54",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

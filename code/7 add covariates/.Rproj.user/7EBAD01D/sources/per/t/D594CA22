@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543431037962.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "651627020",
+    "id" : "D594CA22",
+    "lastKnownWriteTime" : 1548305343,
+    "last_content_update" : 1548305343245,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/7 add covariates/makeDT.R",
+    "project_path" : "makeDT.R",
+    "properties" : {
+        "cursorPosition" : "85,22",
+        "scrollLine" : "34"
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,50 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Beath%
+}{%
+Beath%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+beath2007infant}
+\APACinsertmetastar {%
+beath2007infant}%
+\begin{APACrefauthors}%
+Beath, K\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Infant growth modelling using a shape invariant model
+  with random effects} {Infant growth modelling using a shape invariant model
+  with random effects}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics in medicine}{26}{12}{2547--2564}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Smith%
+}{%
+Smith%
+}{%
+{\protect \APACyear {1979}}%
+}]{%
+smith1979splines}
+\APACinsertmetastar {%
+smith1979splines}%
+\begin{APACrefauthors}%
+Smith, P\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1979}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Splines as a useful and convenient statistical tool}
+  {Splines as a useful and convenient statistical tool}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The American Statistician}{33}{2}{57--62}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

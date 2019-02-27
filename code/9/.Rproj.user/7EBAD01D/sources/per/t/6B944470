@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549034366897.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3369113392",
+    "id" : "6B944470",
+    "lastKnownWriteTime" : 1549034332,
+    "last_content_update" : 1549034332,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/9/run nlme.R",
+    "project_path" : "run nlme.R",
+    "properties" : {
+        "cursorPosition" : "58,18",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1548390397891.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3514415421",
+    "id" : "FAFBEE78",
+    "lastKnownWriteTime" : 1548390040,
+    "last_content_update" : 1548390040,
+    "path" : "C:/Users/jeffl/Desktop/1_25_2019/makeDT.R",
+    "project_path" : "makeDT.R",
+    "properties" : {
+        "cursorPosition" : "20,2",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

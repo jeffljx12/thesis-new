@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543285538711.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1477315841",
+    "id" : "AA3CAB10",
+    "lastKnownWriteTime" : 1548303740,
+    "last_content_update" : 1548303740350,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/7 add covariates/curve function.R",
+    "project_path" : "curve function.R",
+    "properties" : {
+        "cursorPosition" : "52,0",
+        "scrollLine" : "29",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

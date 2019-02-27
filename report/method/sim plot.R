@@ -1,0 +1,12 @@
+library(splines)
+
+t= 1:40
+coeff=c(0.8,1.2,1.5,2,3)
+y= bs(t,degree=3,knots=c(6,15))%*% coeff
+
+
+plot(t,y,type='l',lty=1,lwd=2,xlab='Time',ylab='Outcome',xaxt='n',yaxt='n')
+lines(t,y+0.4,type='l',lty=2,col='red',lwd=2)
+lines(t+5,y,type='l',lty=3,col='blue',lwd=2)
+lines(t/1.3,y,type='l',lty=4,col='darkgreen',lwd=2)
+

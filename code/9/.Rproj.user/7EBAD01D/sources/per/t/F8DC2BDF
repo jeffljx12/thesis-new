@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549500054964.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "478828957",
+    "id" : "F8DC2BDF",
+    "lastKnownWriteTime" : 1549570019,
+    "last_content_update" : 1549570019210,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/9/question.R",
+    "project_path" : "question.R",
+    "properties" : {
+        "cursorPosition" : "15,23",
+        "scrollLine" : "10",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
