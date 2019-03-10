@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1551843438797.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1358660407",
+    "id" : "37F94D7E",
+    "lastKnownWriteTime" : 1551843556,
+    "last_content_update" : 1551843556936,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/11/increase error term.R",
+    "project_path" : "increase error term.R",
+    "properties" : {
+        "cursorPosition" : "89,37",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

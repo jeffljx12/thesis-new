@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1551894748764.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2195271370",
+    "id" : "6A1378D3",
+    "lastKnownWriteTime" : 1551843813,
+    "last_content_update" : 1551843813,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/11/bad starting value.R",
+    "project_path" : "bad starting value.R",
+    "properties" : {
+        "cursorPosition" : "20,22",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

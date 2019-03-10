@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1551842878615.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "268903300",
+    "id" : "89BC3FF4",
+    "lastKnownWriteTime" : 1551903131,
+    "last_content_update" : 1551903131739,
+    "path" : "C:/Users/jeffl/Desktop/thesis git/thesis-new/code/11/decrease ra1.R",
+    "project_path" : "decrease ra1.R",
+    "properties" : {
+        "cursorPosition" : "118,40",
+        "scrollLine" : "99",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
